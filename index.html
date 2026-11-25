@@ -3,55 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mariano Loreto, estudiante de Desarrollo de Software. Portfolio con proyectos de maquetación web y desarrollo front-end.">
     <title>Mariano Loreto Portfolio</title>
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <!-- Hoja de estilos propia -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="" alt="logo" class="logo">
+        <a class="marca" href="#inicio">&lt;MarianoLoreto&gt;</a>
+
+        <!-- Menú: <details> abre y cierra solo, sin JavaScript. En escritorio se ve siempre abierto (ver CSS) -->
         <nav>
-            <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#que-hago">Qué hago</a></li>
-                <li><a href="#tecnologias">Tecnologías</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <details>
+                <summary aria-label="Menú"></summary>
+                <ul>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#que-hago">Qué hago</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#tecnologias">Tecnologías</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </details>
         </nav>
     </header>
 
     <main>
-        <section>
-                <div>
-                    <img src="" alt="algun banner">
-                </div>
-            <div>
+        <!-- Portada: presentación + sector de la foto -->
+        <section id="inicio">
+            <div class="presentacion">
                 <h1>Mariano Loreto</h1>
-                <p>Estudiante de Desarrollo de Software</p>
-                <a href="#contacto" class="boton">Contactame</a>
+                <p class="rol">Estudiante de Desarrollo de Software</p>
+                <p>Construyo interfaces web claras, responsive y fáciles de usar.</p>
+
+                <div class="botones">
+                    <a href="#proyectos" class="boton">Ver proyectos</a>
+                    <a href="#contacto" class="boton boton-secundario">Contactame</a>
+                </div>
+
+                <ul class="redes">
+                    <li><a href="https://github.com/LoretoMariano" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
             </div>
+
+            <!-- SECTOR DE LA FOTO: ruta relativa (sin "/" al principio) para que funcione en GitHub Pages -->
+            <figure class="retrato">
+                <img src="assets/img/Mariano.png" alt="Foto de Mariano Loreto">
+            </figure>
         </section>
 
-        <section>
+        <section id="sobre-mi">
             <h2>Sobre mí</h2>
-            <div>
-                <img src="" alt="una foto mia" class="foto-perfil">
-                <div>
-                    <p>Mi nombre es Mariano Loreto, soy estudiante de Desarrollo de Software</p>
-                    <p>Me motiva transformar una idea en algo que se pueda ver y usar en el navegador. Fuera de la programación, soy fanático de la cultura sneaker, y de ahí surgió mi primer proyecto web. Busco mi primera oportunidad en el mundo IT para seguir aprendiendo, sumar experiencia en equipos de trabajo y crecer como desarrollador.</p>
-                </div>
+            <p>Mi nombre es Mariano Loreto, soy estudiante de Desarrollo de Software.</p>
+            <p>Me motiva transformar una idea en algo que se pueda ver y usar en el navegador. Fuera de la programación, soy fanático de la cultura sneaker, y de ahí surgió mi primer proyecto web. Busco mi primera oportunidad en el mundo IT para seguir aprendiendo, sumar experiencia en equipos de trabajo y crecer como desarrollador.</p>
+
+            <div class="datos">
                 <aside>
                     <h3>Habilidades blandas</h3>
-                    <ul>
-                        <li> Trabajo en equipo</li>
-                        <li> Comunicación</li>
-                        <li> Aprendizaje continuo</li>
+                    <ul class="etiquetas">
+                        <li>Trabajo en equipo</li>
+                        <li>Comunicación</li>
+                        <li>Aprendizaje continuo</li>
                     </ul>
+                </aside>
+                <aside>
+                    <h3>Formación</h3>
+                    <p>Desarrollo de Software, IFTS 16 (en curso)</p>
                 </aside>
             </div>
         </section>
 
-        <section>
+        <section id="que-hago">
             <h2>Qué hago</h2>
-            <div>
+            <div class="tarjetas">
                 <article>
                     <h3>Maquetación web</h3>
                     <p>HTML y CSS semántico, responsive.</p>
@@ -67,46 +98,94 @@
             </div>
         </section>
 
-        <section>
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <div class="tarjetas">
+                <article>
+                    <figure>
+                        <img src="/assets/img/neobarber.jpg" width="1400" height="632" loading="lazy" alt="Portada de NeoBarber: barbería con sillón de cuero y botón Reservar turno">
+                    </figure>
+                    <div>
+                        <h3><a href="https://enchanting-mochi-d7b4d1.netlify.app/" target="_blank" rel="noopener">NeoBarber <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                        <p>Sistema de reserva de turnos para una barbería: el cliente elige barbero, día y horario. Interfaz en React con rutas y conexión a una API de turnos y otra de usuarios.</p>
+                        <ul class="etiquetas">
+                            <li>React</li>
+                            <li>react-router-dom</li>
+                            <li>API REST</li>
+                            <li>Netlify</li>
+                        </ul>
+                        <!-- Agregar acá el enlace al repositorio de NeoBarber (clase "enlaces") -->
+                    </div>
+                </article>
+                <article>
+                    <figure>
+                        <img src="/assets/img/del-mate-club.jpg" width="1400" height="583" loading="lazy" alt="Portada de Del Mate Club: mates, termo y yerba sobre una mesa de madera">
+                    </figure>
+                    <div>
+                        <h3><a href="https://loretomariano.github.io/del_mate_club_tp/" target="_blank" rel="noopener">Del Mate Club <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                        <p>Sitio de una marca de mates y yerbas con páginas de menú, tienda y tutoriales. Maquetación responsive, con paleta verde y dorada.</p>
+                        <ul class="etiquetas">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Flexbox</li>
+                            <li>Responsive</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="tecnologias">
             <h2>Tecnologías</h2>
             <table>
                 <thead>
-                    <tr><th>Sé</th><th>Quiero aprender</th><th>Hobbies</th></tr>
+                    <tr><th>Sé</th><th>Estoy aprendiendo</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>HTML</td><td>JavaScript</td><td>Jugar al futbol</td></tr>
-                    <tr><td>CSS</td><td>React</td><td>Leer</td></tr>
-                    <tr><td>Git</td><td>Node.js</td><td>Viajar</td></tr>
+                    <tr><td>HTML semántico</td><td>JavaScript</td></tr>
+                    <tr><td>CSS, Flexbox y responsive</td><td>React</td></tr>
+                    <tr><td>Git y GitHub</td><td>Node.js y Express</td></tr>
+                    <tr><td>Diseño de interfaces</td><td>Bases de datos con Sequelize</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <form>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre">
+            <div class="dos-columnas">
+                <div>
+                    <h3>¿Hablamos?</h3>
+                    <p>Si querés sumarme a tu equipo o charlar sobre un proyecto, completá el formulario y te respondo a la brevedad.</p>
+                </div>
+                <form>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre">
 
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido" name="apellido">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido">
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
 
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
 
-                <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
-            </form>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Mariano Loreto</p>
-        <ul>
-            <li><a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
-            <li><a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+        <a class="marca" href="#inicio">&lt;MarianoLoreto&gt;</a>
+        <ul class="redes">
+            <li><a href="https://github.com/LoretoMariano" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
         </ul>
     </footer>
+
 </body>
 </html>
